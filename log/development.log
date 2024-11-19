@@ -1,0 +1,643 @@
+Started GET "/" for 172.20.0.1 at 2024-11-19 03:52:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (772.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='DockerRorMongodb'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='DockerRorMongodb'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DockerRorMongodb'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.1.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.1.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 370)
+Completed 200 OK in 33ms (Views: 5.2ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 10043)
+
+
+Started GET "/users" for 172.20.0.1 at 2024-11-19 03:52:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 172.20.0.1 at 2024-11-19 03:52:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/up" for 172.20.0.1 at 2024-11-19 03:53:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::HealthController#show as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 8)
+Completed 200 OK in 16ms (Views: 2.3ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 690)
+
+
+Started GET "/users" for 172.20.0.1 at 2024-11-19 03:53:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+NoMethodError (undefined method `allow_browser' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/users" for 172.20.0.1 at 2024-11-19 03:54:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | There was a change in the members of the 'Unknown' topology.
+MONGODB | Server db:27017 initializing.
+MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[db:27017] servers=[#<Server address=db:27017 UNKNOWN>]>
+MONGODB | Server description for db:27017 changed from 'unknown' to 'standalone'.
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | db:27017 req:6 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x39180 type=uuid data=0x73071e8aba7c4859...>}}
+MONGODB | db:27017 req:6 | myapp_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 23ms (Views: 8.7ms | ActiveRecord: 0.0ms | MongoDB: 0.3ms | Allocations: 12281)
+
+
+MONGODB | Server description for db:27017 changed from 'standalone' to 'standalone'.
+MONGODB | There was a change in the members of the 'Single' topology.
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 03:54:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+Completed 406 Not Acceptable in 10ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1064)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#new is missing a template for request formats: text/html):
+  
+actionpack (7.1.3.4) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.4) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+mongoid (9.0.0) lib/mongoid/railties/controller_runtime.rb:22:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 03:55:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3170)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 8382)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 14680)
+
+
+Started GET "/assets/application-8b441ae0.css" for 172.20.0.1 at 2024-11-19 03:55:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/users" for 172.20.0.1 at 2024-11-19 03:55:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 3685)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 03:59:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1266)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 03:59:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1035)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 03:59:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1034)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:01:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1049)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:01:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1034)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:01:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1034)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 04:05:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 3331ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 5956)
+
+
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:05:37 +0000
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:15:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+app/controllers/users_controller.rb:17:in `new'
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Overwriting existing field username in class User.
+Overwriting existing field email in class User.
+Overwriting existing field password_digest in class User.
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1690)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:15:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:05:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 6481)
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'name' which is not allowed on the model User.
+summary:
+  User#name= was called but there is no 'name' field defined in the model, and Mongoid::Attributes::Dynamic is not included. This error is also raised instead of NoMethodError if the unknown attribute is passed to any method that accepts an attributes hash, such as #attributes=.
+resolution:
+  Define the field 'name' in User, or include Mongoid::Attributes::Dynamic in User if you intend to store values in fields that are not explicitly defined.):
+  
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:06:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 6575)
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'password' which is not allowed on the model User.
+summary:
+  User#password= was called but there is no 'password' field defined in the model, and Mongoid::Attributes::Dynamic is not included. This error is also raised instead of NoMethodError if the unknown attribute is passed to any method that accepts an attributes hash, such as #attributes=.
+resolution:
+  Define the field 'password' in User, or include Mongoid::Attributes::Dynamic in User if you intend to store values in fields that are not explicitly defined.):
+  
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 04:08:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 5826)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:18:in `<class:User>'
+app/models/user.rb:2:in `<main>'
+app/controllers/users_controller.rb:17:in `new'
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 04:08:30 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1822)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2341)
+Completed 200 OK in 18ms (Views: 4.2ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 8646)
+
+
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:08:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+MONGODB | db:27017 req:93 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"user1"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x39180 type=uuid data=0x73071e8aba7c4859...>}}
+MONGODB | db:27017 req:93 | myapp_development.find | SUCCEEDED | 0.001s
+MONGODB | db:27017 req:94 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"user1@ror.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x39180 type=uuid data=0x73071e8aba7c4859...>}}
+MONGODB | db:27017 req:94 | myapp_development.find | SUCCEEDED | 0.000s
+MONGODB | db:27017 req:95 conn:1:1 sconn:3 | myapp_development.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('673c0f48f95e68d3d54646ab'), "name"=>"user1", "email"=>"user1@ror.com", "updated_at"=>2024-11-19 04:08:40.409395746 UTC, "created_at"=>2024-11-19 04:08:40.409395746 UTC}], "$db"...
+MONGODB | db:27017 req:95 | myapp_development.insert | SUCCEEDED | 2.767s
+Redirected to http://localhost:3000/users/673c0f48f95e68d3d54646ab
+Completed 302 Found in 2788ms (ActiveRecord: 0.0ms | MongoDB: 2768.2ms | Allocations: 6791)
+
+
+Started GET "/users/673c0f48f95e68d3d54646ab" for 172.20.0.1 at 2024-11-19 04:08:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"673c0f48f95e68d3d54646ab"}
+MONGODB | db:27017 req:97 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"673c0f48f95e68d3d54646ab"}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x39180 type=uuid data=0x73071e8aba7c4859...>}}
+MONGODB | db:27017 req:97 | myapp_development.find | SUCCEEDED | 0.050s
+Completed 404 Not Found in 59ms (ActiveRecord: 0.0ms | MongoDB: 49.8ms | Allocations: 2107)
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document not found for class User with attributes {:name=>"673c0f48f95e68d3d54646ab"}.
+summary:
+  When calling User.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised.
+resolution:
+  Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause nil to be returned instead of raising this error.):
+  
+app/controllers/users_controller.rb:51:in `find_user_by_name'
+Started GET "/users/new" for 172.20.0.1 at 2024-11-19 04:14:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1832)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2404)
+Completed 200 OK in 40ms (Views: 6.0ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 13844)
+
+
+Started GET "/assets/application-4f8a7ba6.css" for 172.20.0.1 at 2024-11-19 04:14:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/users" for 172.20.0.1 at 2024-11-19 04:14:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1111)
+
+
+  
+NameError (uninitialized constant User::BCrypt):
+  
+app/models/user.rb:25:in `password='
+app/controllers/users_controller.rb:21:in `new'
+app/controllers/users_controller.rb:21:in `create'
+MONGODB | Error running awaited hello on db:27017: Mongo::Error::SocketError: EOFError: end of file reached (for 172.20.0.2:27017 (no TLS)) (on db:27017)
+Started GET "/users" for 172.21.0.1 at 2024-11-19 04:18:45 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DockerRorMongodb'*/[0m
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | There was a change in the members of the 'Unknown' topology.
+MONGODB | Server db:27017 initializing.
+MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[db:27017] servers=[#<Server address=db:27017 UNKNOWN>]>
+MONGODB | Server description for db:27017 changed from 'unknown' to 'standalone'.
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | db:27017 req:6 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:6 | myapp_development.find | SUCCEEDED | 0.072s
+Completed 200 OK in 115ms (Views: 14.5ms | ActiveRecord: 0.0ms | MongoDB: 71.6ms | Allocations: 14500)
+
+
+MONGODB | Server description for db:27017 changed from 'standalone' to 'standalone'.
+MONGODB | There was a change in the members of the 'Single' topology.
+Started GET "/users/new" for 172.21.0.1 at 2024-11-19 04:18:58 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 110.2ms | Allocations: 6237)
+  Rendered layout layouts/application.html.erb (Duration: 115.1ms | Allocations: 12155)
+Completed 200 OK in 1250ms (Views: 126.4ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 20216)
+
+
+Started POST "/users" for 172.21.0.1 at 2024-11-19 04:19:13 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user2", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+MONGODB | db:27017 req:9 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"user2@ror.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:9 | myapp_development.find | SUCCEEDED | 0.001s
+MONGODB | db:27017 req:10 conn:1:1 sconn:3 | myapp_development.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('673c11c192d291ed3a41ba28'), "name"=>"user2", "email"=>"user2@ror.com", "password_digest"=>"$2a$12$NnWnqRd/FPw6f7Opf/GhXe4H6jQa5el8BnG486fqfpL9vT1m/TqRq", "updated_at"=>2024-11-...
+MONGODB | db:27017 req:10 | myapp_development.insert | SUCCEEDED | 0.034s
+Redirected to http://localhost:3000/users/673c11c192d291ed3a41ba28
+Completed 302 Found in 346ms (ActiveRecord: 0.0ms | MongoDB: 34.4ms | Allocations: 4710)
+
+
+Started GET "/users/673c11c192d291ed3a41ba28" for 172.21.0.1 at 2024-11-19 04:19:14 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"673c11c192d291ed3a41ba28"}
+MONGODB | db:27017 req:11 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"name"=>"673c11c192d291ed3a41ba28"}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:11 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 404 Not Found in 11ms (ActiveRecord: 0.0ms | MongoDB: 0.6ms | Allocations: 2168)
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document not found for class User with attributes {:name=>"673c11c192d291ed3a41ba28"}.
+summary:
+  When calling User.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised.
+resolution:
+  Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause nil to be returned instead of raising this error.):
+  
+app/controllers/users_controller.rb:51:in `find_user_by_name'
+Started GET "/users/673c11c192d291ed3a41ba28" for 172.21.0.1 at 2024-11-19 04:20:12 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"673c11c192d291ed3a41ba28"}
+MONGODB | db:27017 req:18 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('673c11c192d291ed3a41ba28')}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:18 | myapp_development.find | SUCCEEDED | 0.001s
+Filter chain halted as :find_user_by_name rendered or redirected
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 0.0ms | MongoDB: 0.6ms | Allocations: 6933)
+
+
+Started GET "/users/" for 172.21.0.1 at 2024-11-19 04:20:19 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | db:27017 req:20 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:20 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 13ms (Views: 2.8ms | ActiveRecord: 0.0ms | MongoDB: 0.7ms | Allocations: 2020)
+
+
+Started GET "/users/" for 172.21.0.1 at 2024-11-19 04:20:41 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | db:27017 req:23 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:23 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 14ms (Views: 2.3ms | ActiveRecord: 0.0ms | MongoDB: 0.6ms | Allocations: 7463)
+
+
+Started GET "/users/news" for 172.21.0.1 at 2024-11-19 04:20:45 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"news"}
+MONGODB | db:27017 req:24 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"news"}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:24 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 404 Not Found in 22ms (ActiveRecord: 0.0ms | MongoDB: 1.0ms | Allocations: 2060)
+
+
+  
+Mongoid::Errors::DocumentNotFound (
+message:
+  Document not found for class User with attributes {:id=>"news"}.
+summary:
+  When calling User.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised.
+resolution:
+  Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause nil to be returned instead of raising this error.):
+  
+app/controllers/users_controller.rb:51:in `find_user_by_id'
+Started GET "/users/new" for 172.21.0.1 at 2024-11-19 04:20:48 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1816)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2306)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 3252)
+
+
+Started POST "/users" for 172.21.0.1 at 2024-11-19 04:21:03 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"user3", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+MONGODB | db:27017 req:27 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"user3@ror.com"}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:27 | myapp_development.find | SUCCEEDED | 0.001s
+MONGODB | db:27017 req:28 conn:1:1 sconn:3 | myapp_development.insert | STARTED | {"insert"=>"users", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('673c122f92d291ed3a41ba29'), "name"=>"user3", "email"=>"user3@ror.com", "password_digest"=>"$2a$12$WAxReASNgeQRj2L3AT8Co.vtH8eroGXnLPnYhr7VE3l.EX2sH3SYy", "updated_at"=>2024-11-...
+MONGODB | db:27017 req:28 | myapp_development.insert | SUCCEEDED | 0.001s
+Redirected to http://localhost:3000/users/673c122f92d291ed3a41ba29
+Completed 302 Found in 310ms (ActiveRecord: 0.0ms | MongoDB: 1.5ms | Allocations: 4112)
+
+
+Started GET "/users/673c122f92d291ed3a41ba29" for 172.21.0.1 at 2024-11-19 04:21:03 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"673c122f92d291ed3a41ba29"}
+MONGODB | db:27017 req:29 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('673c122f92d291ed3a41ba29')}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:29 | myapp_development.find | SUCCEEDED | 0.001s
+Filter chain halted as :find_user_by_id rendered or redirected
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.0ms | MongoDB: 0.6ms | Allocations: 1501)
+
+
+Started GET "/users/" for 172.21.0.1 at 2024-11-19 04:21:12 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | db:27017 req:31 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:31 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 18ms (Views: 3.5ms | ActiveRecord: 0.0ms | MongoDB: 0.9ms | Allocations: 2165)
+
+
+Started GET "/post/" for 172.21.0.1 at 2024-11-19 04:21:21 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/post"):
+  
+Started GET "/posts" for 172.21.0.1 at 2024-11-19 04:21:25 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+MONGODB | db:27017 req:34 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"posts", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:34 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 23ms (Views: 2.1ms | ActiveRecord: 0.0ms | MongoDB: 0.7ms | Allocations: 6779)
+
+
+Started GET "/posts/new" for 172.21.0.1 at 2024-11-19 04:21:30 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1633)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1908)
+Completed 200 OK in 16ms (Views: 5.0ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 2490)
+
+
+Started POST "/posts" for 172.21.0.1 at 2024-11-19 04:21:42 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Post 1", "body"=>"Post 1 Body"}, "commit"=>"Create Post"}
+MONGODB | db:27017 req:36 conn:1:1 sconn:3 | myapp_development.insert | STARTED | {"insert"=>"posts", "ordered"=>true, "documents"=>[{"_id"=>BSON::ObjectId('673c125692d291ed3a41ba2a'), "title"=>"Post 1", "body"=>"Post 1 Body", "updated_at"=>2024-11-19 04:21:42.160537045 UTC, "created_at"=>2024-11-19 04:21:42.160537045 UTC}], "$db"=...
+MONGODB | db:27017 req:36 | myapp_development.insert | SUCCEEDED | 3.735s
+Redirected to http://localhost:3000/posts/673c125692d291ed3a41ba2a
+Completed 302 Found in 3750ms (ActiveRecord: 0.0ms | MongoDB: 3734.9ms | Allocations: 3088)
+
+
+Started GET "/posts/673c125692d291ed3a41ba2a" for 172.21.0.1 at 2024-11-19 04:21:45 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"673c125692d291ed3a41ba2a"}
+MONGODB | db:27017 req:38 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"posts", "filter"=>{"_id"=>BSON::ObjectId('673c125692d291ed3a41ba2a')}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x27960 type=uuid data=0x2bd5c6a9b7ec4d69...>}}
+MONGODB | db:27017 req:38 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 0.0ms | MongoDB: 0.6ms | Allocations: 1915)
+
+
+Started GET "/get_product" for 172.21.0.1 at 2024-11-19 04:22:11 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/get_product"):
+  
+Started GET "/get_products" for 172.21.0.1 at 2024-11-19 04:22:16 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/get_products"):
+  
+Started GET "/get_products" for 172.21.0.1 at 2024-11-19 04:22:35 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#get_products as HTML
+Completed 200 OK in 957ms (Views: 0.3ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 4419)
+
+
+Started GET "/get_product" for 172.21.0.1 at 2024-11-19 04:22:53 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/get_product"):
+  
+Started GET "/get_product" for 172.22.0.1 at 2024-11-19 04:34:08 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DockerRorMongodb'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/get_product"):
+  
+Started GET "/get_products" for 172.22.0.1 at 2024-11-19 04:34:18 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#get_products as HTML
+Completed 200 OK in 710ms (Views: 0.3ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 4343)
+
+
+Started GET "/" for 172.22.0.1 at 2024-11-19 04:34:21 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.1.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.1.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 263)
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 0.0ms | MongoDB: 0.0ms | Allocations: 1165)
+
+
+Started GET "/users" for 172.22.0.1 at 2024-11-19 04:34:31 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | There was a change in the members of the 'Unknown' topology.
+MONGODB | Server db:27017 initializing.
+MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[db:27017] servers=[#<Server address=db:27017 UNKNOWN>]>
+MONGODB | Server description for db:27017 changed from 'unknown' to 'standalone'.
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | db:27017 req:6 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x28480 type=uuid data=0x786fb02998274ff5...>}}
+MONGODB | db:27017 req:6 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 36ms (Views: 11.6ms | ActiveRecord: 0.0ms | MongoDB: 1.3ms | Allocations: 12948)
+
+
+MONGODB | Server description for db:27017 changed from 'standalone' to 'standalone'.
+MONGODB | There was a change in the members of the 'Single' topology.
+Started GET "/users" for 172.22.0.1 at 2024-11-19 05:04:09 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+MONGODB | db:27017 req:184 conn:1:1 sconn:3 | myapp_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"myapp_development", "lsid"=>{"id"=><BSON::Binary:0x35720 type=uuid data=0xed6f1249dfab493c...>}}
+MONGODB | db:27017 req:184 | myapp_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 19ms (Views: 3.2ms | ActiveRecord: 0.0ms | MongoDB: 0.7ms | Allocations: 2200)
+
+
